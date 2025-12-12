@@ -3,9 +3,12 @@ using System.Collections;
 
 public class PipeSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject pipePairPrefab;  // Drag your PipePair prefab here
+    [SerializeField] GameObject pipePairPrefab;
     [SerializeField] float spawnRate = 2f;
-    [SerializeField] float heightOffset = 2.5f;
+
+    [SerializeField] float baseY = -5.5f;        // gap center
+    [SerializeField] float randomOffset = 1.8f; // small variation so it's not boring
+    [SerializeField] float xSpawnLocation = 13f; // off-screen right
 
     void Start()
     {
@@ -16,8 +19,8 @@ public class PipeSpawner : MonoBehaviour
     {
         while (true)
         {
-            float randomY = Random.Range(-heightOffset, heightOffset);
-            Instantiate(pipePairPrefab, new Vector3(10f, randomY, 0), Quaternion.identity);
+            float finalY = baseY + Random.Range(-randomOffset, randomOffset);
+            Instantiate(pipePairPrefab, new Vector3(xSpawnLocation, finalY, 0), Quaternion.identity);
             yield return new WaitForSeconds(spawnRate);
         }
     }

@@ -7,10 +7,11 @@ public class PipeMover : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.left * speed * Time.deltaTime);
-    }
 
-    void OnBecameInvisible()
-    {
-        Destroy(gameObject);
+        // Destroy when far off-screen left (saves performance)
+        if (transform.position.x < -12f)
+        {
+            Destroy(gameObject);
+        }
     }
 }

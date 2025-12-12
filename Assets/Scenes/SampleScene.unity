@@ -146,7 +146,7 @@ Transform:
   m_GameObject: {fileID: 420260745}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.49029, y: 2.75574, z: 0}
+  m_LocalPosition: {x: 10.11, y: 5.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -178,9 +178,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e8a595ff0802164d968596eeac141ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PipeSpawner
-  pipePairPrefab: {fileID: 1714479355980774804}
+  pipePairPrefab: {fileID: 8195511489773544446, guid: 87ede5f1c9adaa246ab46fe37d507b91, type: 3}
   spawnRate: 2
-  heightOffset: 2
+  baseY: -5.5
+  randomOffset: 1.8
+  xSpawnLocation: 10
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +477,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0.5
+  m_GravityScale: 1.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -555,7 +557,7 @@ Transform:
   m_GameObject: {fileID: 620017955}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.4, y: 2.5, z: 0}
+  m_LocalPosition: {x: -7.37, y: 2.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -573,7 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc88e1947f7128740a5f7e31fa8df111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BirdController
-  flapForce: 5
+  flapForce: 7
 --- !u!114 &620017961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1292,7 +1294,7 @@ Transform:
   m_GameObject: {fileID: 1810171451}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9, y: -5.1, z: 0}
+  m_LocalPosition: {x: -0.23, y: -5.1, z: 0}
   m_LocalScale: {x: 24.23, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1367,9 +1369,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score: 0
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1461,13 +1461,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pipes
       objectReference: {fileID: 0}
+    - target: {fileID: 8195511489773544446, guid: 87ede5f1c9adaa246ab46fe37d507b91, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8322112913726499715, guid: 87ede5f1c9adaa246ab46fe37d507b91, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14
+      value: 4.7
       objectReference: {fileID: 0}
     - target: {fileID: 8322112913726499715, guid: 87ede5f1c9adaa246ab46fe37d507b91, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.36
+      value: -5.58
       objectReference: {fileID: 0}
     - target: {fileID: 8322112913726499715, guid: 87ede5f1c9adaa246ab46fe37d507b91, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1501,16 +1505,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8829107739860008186, guid: 87ede5f1c9adaa246ab46fe37d507b91, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87ede5f1c9adaa246ab46fe37d507b91, type: 3}
---- !u!1 &1714479355980774804 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8195511489773544446, guid: 87ede5f1c9adaa246ab46fe37d507b91, type: 3}
-  m_PrefabInstance: {fileID: 1714479355980774803}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

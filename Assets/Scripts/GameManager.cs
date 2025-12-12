@@ -8,11 +8,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] GameObject gameOverPanel;
     int score = 0;
+    void Start()
+    {
+        score = 0;
+        scoreText.text = "Score: 0";
+    }
 
     public void AddScore()
     {
         score++;
-        scoreText.text = score.ToString();
+        scoreText.text = "Score: " + score;
     }
 
     public void GameOver()
