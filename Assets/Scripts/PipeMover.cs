@@ -2,9 +2,15 @@ using UnityEngine;
 
 public class PipeMover : MonoBehaviour
 {
-    [SerializeField] public float speed = 3f;  // Public for spawner
+    [SerializeField] float speed = 3f;
 
-    void Update() { transform.Translate(Vector3.left * speed * Time.deltaTime); }
+    void Update()
+    {
+        transform.Translate(Vector3.left * speed * Time.deltaTime);
+    }
 
-    void OnBecameInvisible() { Destroy(gameObject); }  // Clean up
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }

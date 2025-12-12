@@ -3,21 +3,21 @@ using System.Collections;
 
 public class PipeSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject pipePrefab;  // Assign top+bottom pipe pair prefab
+    [SerializeField] GameObject pipePairPrefab;  // Drag your PipePair prefab here
     [SerializeField] float spawnRate = 2f;
-    [SerializeField] float heightOffset = 2f;
-    [SerializeField] float speed = 3f;
+    [SerializeField] float heightOffset = 2.5f;
 
-    void Start() { StartCoroutine(SpawnPipes()); }
+    void Start()
+    {
+        StartCoroutine(SpawnPipes());
+    }
 
     IEnumerator SpawnPipes()
     {
         while (true)
         {
             float randomY = Random.Range(-heightOffset, heightOffset);
-            Vector3 spawnPos = new(10f, randomY, 0);  // Off-screen right
-            GameObject pipes = Instantiate(pipePrefab, spawnPos, Quaternion.identity);
-            pipes.GetComponent<PipeMover>().speed = speed;  // Tweak speed
+            Instantiate(pipePairPrefab, new Vector3(10f, randomY, 0), Quaternion.identity);
             yield return new WaitForSeconds(spawnRate);
         }
     }
